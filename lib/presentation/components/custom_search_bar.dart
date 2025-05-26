@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:how_far_uni/presentation/themes/app_colors.dart';
+import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
@@ -9,12 +9,12 @@ class CustomSearchBar extends StatelessWidget {
     return Expanded(
       child: TextFormField(
         decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 0),
           prefixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 0),
             child: Icon(Icons.search),
           ),
-          hintText: 'Search for Uni...',
+          hintText: 'Search for University...',
           hintStyle: const TextStyle(color: Colors.grey),
           filled: true,
           fillColor: Colors.white,

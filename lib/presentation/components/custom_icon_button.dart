@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:how_far_uni/presentation/themes/app_colors.dart';
+import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:how_far_uni/presentation/themes/app_colors.dart';
+import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final String label;
