@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_far_uni/presentation/themes/app_colors.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
@@ -18,11 +19,11 @@ class CustomSearchBar extends StatelessWidget {
           filled: true,
           fillColor: Colors.white,
           border: OutlineInputBorder(
-            borderSide: BorderSide(width: 2, color: Colors.black),
+            borderSide: BorderSide(width: 2, color: AppColors.primaryColor),
             borderRadius: BorderRadius.circular(10),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: Colors.black),
+            borderSide: BorderSide(width: 1, color: AppColors.primaryColor),
             borderRadius: BorderRadius.circular(10),
           ),
         ),

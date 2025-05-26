@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:how_far_uni/presentation/components/custom_search_bar.dart';
+import 'package:how_far_uni/presentation/themes/app_colors.dart';
 
 class LiveMapPage extends StatelessWidget {
   const LiveMapPage({super.key});
@@ -12,7 +13,7 @@ class LiveMapPage extends StatelessWidget {
         title: const CustomSearchBar(),
         actions: [
           Container(
-            padding: const EdgeInsets.all(5),
+            padding: const EdgeInsets.all(3),
             margin: const EdgeInsets.only(right: 10),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -26,7 +27,7 @@ class LiveMapPage extends StatelessWidget {
               ],
             ),
             child: CircleAvatar(
-              backgroundColor: Colors.grey,
+              backgroundColor: AppColors.secondaryColor,
               foregroundColor: Colors.white,
               child: Icon(Icons.person),
             ),
@@ -35,7 +36,7 @@ class LiveMapPage extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xFF004B89),
+        backgroundColor: AppColors.primaryColor,
         foregroundColor: Colors.white,
         onPressed: () {},
         child: Icon(Icons.gps_fixed_outlined),

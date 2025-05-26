@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/screen/main_page.dart';
+import 'package:how_far_uni/presentation/themes/app_colors.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -14,12 +15,12 @@ class OnboardingScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CircleAvatar(
-              backgroundColor: Colors.blue,
+              backgroundColor: AppColors.primaryColor,
               radius: 40,
               child: Icon(
                 Icons.location_history,
                 size: 45,
-                color: Colors.white,
+                color: AppColors.white,
               ),
             ),
             const Gap(10),

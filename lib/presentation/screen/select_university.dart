@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/components/custom_elevated_button.dart';
 import 'package:how_far_uni/presentation/components/custom_search_bar.dart';
 import 'package:how_far_uni/presentation/screen/live_map_page.dart';
+import 'package:how_far_uni/presentation/themes/app_colors.dart';
 
 class SelectUniversity extends StatelessWidget {
   const SelectUniversity({super.key});
@@ -16,7 +17,7 @@ class SelectUniversity extends StatelessWidget {
         child: Column(
           children: [
             ColoredBox(
-              color: Colors.blue,
+              color: AppColors.primaryColor,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -51,7 +52,7 @@ class SelectUniversity extends StatelessWidget {
                 itemBuilder:
                     (context, index) => ListTile(
                       leading: CircleAvatar(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: AppColors.secondaryColor,
                         radius: 25,
                       ),
                       title: Text(
@@ -63,7 +64,7 @@ class SelectUniversity extends StatelessWidget {
                       ),
                       subtitle: Text(
                         'Ekiti State, Nigeria',
-                        style: GoogleFonts.poppins(color: Colors.grey),
+                        style: GoogleFonts.poppins(color: AppColors.grey),
                       ),
                     ),
               ),
