@@ -70,7 +70,7 @@ class HomeLocationDetails extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    'Wuse, Abuja.',
+                    '121 Garki Street, Wuse, Abuja.',
                     style: GoogleFonts.poppins(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,

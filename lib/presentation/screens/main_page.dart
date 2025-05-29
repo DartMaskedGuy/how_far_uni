@@ -21,22 +21,23 @@ class _MainPageState extends State<MainPage> {
       extendBody: true,
       bottomNavigationBar: SafeArea(
         child: Container(
-          margin: EdgeInsetsDirectional.symmetric(horizontal: 24),
-          padding: EdgeInsetsDirectional.symmetric(horizontal: 8),
+          margin: const EdgeInsetsDirectional.symmetric(horizontal: 24),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(50),
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withAlpha(50),
-                blurRadius: 20,
-                offset: Offset(0, 20),
+                color: const Color(0x3C004B89),
+                blurRadius: 8,
+                spreadRadius: 5,
+                offset: Offset(0, 8),
               ),
             ],
           ),
           child: GNav(
             tabBackgroundColor: AppColors.primaryColor,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             tabBorderRadius: 50,
             gap: 8,
             selectedIndex: currentIndex,

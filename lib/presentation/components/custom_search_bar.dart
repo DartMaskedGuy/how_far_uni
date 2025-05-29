@@ -15,9 +15,10 @@ class CustomSearchBar extends StatelessWidget {
             child: Icon(Icons.search),
           ),
           hintText: 'Search for University...',
-          hintStyle: const TextStyle(color: Colors.grey),
+          hintStyle: const TextStyle(color: AppColors.grey),
+          suffixIcon: Icon(Icons.filter_list_rounded),
           filled: true,
-          fillColor: Colors.white,
+          fillColor: AppColors.white,
           border: OutlineInputBorder(
             borderSide: BorderSide(width: 2, color: AppColors.primaryColor),
             borderRadius: BorderRadius.circular(10),

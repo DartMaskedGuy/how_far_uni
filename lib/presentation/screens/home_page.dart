@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:how_far_uni/presentation/components/custom_search_bar.dart';
 import 'package:how_far_uni/presentation/components/home_location_details.dart';
+import 'package:how_far_uni/presentation/components/search_bottom_modal_sheet.dart';
 import 'package:how_far_uni/presentation/components/street_view_scroll.dart';
-import 'package:how_far_uni/presentation/screens/select_university.dart';
 import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -50,79 +49,7 @@ class HomePage extends StatelessWidget {
                               backgroundColor: AppColors.white,
                               context: context,
                               builder:
-                                  (context) => Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 0,
-                                    ),
-                                    height: MediaQuery.sizeOf(context).height,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 20,
-                                          ),
-                                          child: const CustomSearchBar(),
-                                        ),
-                                        const Gap(20),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                            horizontal: 20,
-                                          ),
-                                          child: Text(
-                                            'Select University',
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        const Gap(5),
-                                        Expanded(
-                                          child: ListView.builder(
-                                            padding: const EdgeInsets.all(0),
-                                            itemCount: 5,
-                                            itemBuilder:
-                                                (context, index) => ListTile(
-                                                  leading: CircleAvatar(
-                                                    backgroundColor:
-                                                        AppColors
-                                                            .secondaryColor,
-                                                    radius: 25,
-                                                  ),
-                                                  title: Text(
-                                                    'Federal University of Oye Ekiti.',
-                                                    style: GoogleFonts.poppins(
-                                                      fontSize: 17,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                  subtitle: Text(
-                                                    'Ekiti State, Nigeria.',
-                                                    style: GoogleFonts.poppins(
-                                                      fontSize: 14,
-                                                      color: Colors.black54,
-                                                    ),
-                                                  ),
-                                                  onTap: () {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder:
-                                                            (context) =>
-                                                                const SelectUniversity(),
-                                                      ),
-                                                    );
-                                                  },
-                                                ),
-                                          ),
-                                        ),
-                                        const Gap(20),
-                                      ],
-                                    ),
-                                  ),
+                                  (context) => const SearchBottomModalSheet(),
                             );
                           },
                           style: IconButton.styleFrom(
@@ -194,6 +121,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
 
+          // Location Details
           const HomeLocationDetails(),
         ],
       ),
