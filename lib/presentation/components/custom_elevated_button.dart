@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class CustomElevatedButton extends StatelessWidget {
@@ -27,7 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          child: Text(label, style: GoogleFonts.poppins()),
+          child: Text(label, style: TextStyle()),
         ),
       ),
     );

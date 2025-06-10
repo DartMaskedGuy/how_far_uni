@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/components/custom_elevated_button.dart';
 import 'package:how_far_uni/presentation/components/custom_search_bar.dart';
 import 'package:how_far_uni/presentation/screens/live_map_page.dart';
@@ -42,14 +41,14 @@ class SelectUniversity extends StatelessWidget {
                       ),
                       title: Text(
                         'Federal University of Oye Ekiti.',
-                        style: GoogleFonts.poppins(
+                        style: TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       subtitle: Text(
                         'Ekiti State, Nigeria',
-                        style: GoogleFonts.poppins(color: AppColors.grey),
+                        style: TextStyle(color: AppColors.grey),
                       ),
                     ),
               ),

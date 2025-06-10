@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:how_far_uni/presentation/components/view_street_button.dart';
 import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class StreetViewScroll extends StatelessWidget {
+class StreetViewScroll extends StatefulWidget {
   const StreetViewScroll({super.key});
 
+  @override
+  State<StreetViewScroll> createState() => _StreetViewScrollState();
+}
+
+class _StreetViewScrollState extends State<StreetViewScroll> {
+  final PageController _imageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,28 +49,162 @@ class StreetViewScroll extends StatelessWidget {
                           backgroundColor: AppColors.white,
                           foregroundColor: AppColors.primaryColor,
                         ),
-                        icon: Icon(Icons.more_vert),
+                        icon: const Icon(Icons.favorite_outline),
                       ),
                     ),
                     Positioned(
                       bottom: 5,
                       left: 8,
                       right: 8,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: AppColors.primaryColor,
-                          foregroundColor: AppColors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        child: Text('View Street'),
+                      child: ViewStreetButton(
+                        label: 'View Street',
+                        onPressed: () => _openStreetViewSheet(context: context),
                       ),
                     ),
                   ],
                 ),
               ),
+        ),
+      ),
+    );
+  }
+
+  // Open Street View Sheet
+  Future _openStreetViewSheet({context}) {
+    return showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      barrierColor: Colors.black.withAlpha(200),
+      context: context,
+      builder: (context) => _imageScrollController(),
+    );
+  }
+
+  // Image Scroller
+  Widget _imageScrollController() {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: SizedBox(
+        height: 600,
+        child: ListView(
+          physics: const NeverScrollableScrollPhysics(),
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.52,
+              child: PageView.builder(
+                controller: _imageController,
+                itemCount: 4,
+                itemBuilder:
+                    (_, index) => Stack(
+                      children: [
+                        SizedBox(
+                          height: double.infinity,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              'assets/images/street_view1.jpg',
+                              filterQuality: FilterQuality.high,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 10,
+                          right: 10,
+                          child: InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: Icon(Icons.close, color: AppColors.white),
+                          ),
+                        ),
+                        Positioned(
+                          left: 0,
+                          right: 0,
+                          bottom: 0,
+                          child: Container(
+                            padding: const EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              gradient: LinearGradient(
+                                colors: [
+                                  Colors.transparent,
+                                  Colors.black.withAlpha(90),
+                                  Colors.black.withAlpha(120),
+                                  Colors.black.withAlpha(150),
+                                  Colors.black.withAlpha(190),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: SmoothPageIndicator(
+                                    controller: _imageController,
+                                    count: 4,
+                                    effect: const ExpandingDotsEffect(
+                                      radius: 10,
+                                      dotHeight: 10,
+                                      dotWidth: 10,
+                                      dotColor: Colors.white70,
+                                      activeDotColor: AppColors.white,
+                                    ),
+                                  ),
+                                ),
+                                const Gap(8),
+                                const Row(
+                                  children: [
+                                    Icon(
+                                      Icons.maps_home_work_outlined,
+                                      color: AppColors.white,
+                                    ),
+                                    Gap(3),
+                                    Text(
+                                      'University of Lagos, Akoka, Lagos State.',
+                                      style: TextStyle(
+                                        color: AppColors.white,
+                                        fontWeight: FontWeight.w800,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const Text(
+                                  'Federal University',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Gap(5),
+                                const Text(
+                                  'Distance from current location: 30km',
+                                  style: TextStyle(
+                                    color: AppColors.white,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const Text(
+                                  'Time it will take: 1hr 30mins',
+                                  style: TextStyle(
+                                    color: AppColors.white,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const Gap(5),
+                                ViewStreetButton(
+                                  label: 'View Location',
+                                  onPressed: () {},
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+              ),
+            ),
+          ],
         ),
       ),
     );

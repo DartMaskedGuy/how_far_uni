@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/screens/live_map_page.dart';
 import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
@@ -43,15 +42,15 @@ class HomeLocationDetails extends StatelessWidget {
                       const Gap(5),
                       Text(
                         'Current University:',
-                        style: GoogleFonts.poppins(fontSize: 14),
+                        style: TextStyle(fontSize: 14),
                       ),
                     ],
                   ),
                   Text(
                     'Federal University Oye - Ekiti, Ekiti State.',
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w800,
                       color: Colors.black54,
                     ),
                   ),
@@ -63,17 +62,14 @@ class HomeLocationDetails extends StatelessWidget {
                         color: AppColors.primaryColor,
                       ),
                       const Gap(5),
-                      Text(
-                        'Current Location:',
-                        style: GoogleFonts.poppins(fontSize: 14),
-                      ),
+                      Text('Current Location:', style: TextStyle(fontSize: 14)),
                     ],
                   ),
                   Text(
                     '121 Garki Street, Wuse, Abuja.',
-                    style: GoogleFonts.poppins(
+                    style: TextStyle(
                       fontSize: 13,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w800,
                       color: Colors.black54,
                     ),
                   ),

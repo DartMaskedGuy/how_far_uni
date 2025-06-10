@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:how_far_uni/presentation/screens/home_page.dart';
 import 'package:how_far_uni/presentation/screens/live_map_page.dart';
-import 'package:how_far_uni/presentation/screens/select_university.dart';
 import 'package:how_far_uni/presentation/utils/themes/app_colors.dart';
 
 class MainPage extends StatefulWidget {
@@ -28,10 +27,10 @@ class _MainPageState extends State<MainPage> {
             borderRadius: BorderRadius.circular(50),
             boxShadow: [
               BoxShadow(
-                color: const Color(0x3C004B89),
-                blurRadius: 8,
-                spreadRadius: 5,
-                offset: Offset(0, 8),
+                color: const Color(0x18004B89),
+                blurRadius: 3,
+                spreadRadius: 1,
+                offset: Offset(0, 5),
               ),
             ],
           ),
@@ -59,7 +58,7 @@ class _MainPageState extends State<MainPage> {
                 margin: EdgeInsets.all(8),
                 icon: Icons.place_outlined,
                 iconColor: AppColors.primaryColor,
-                text: 'Map',
+                text: 'Live Map',
                 iconActiveColor: AppColors.white,
                 textColor: AppColors.white,
               ),
@@ -71,9 +70,9 @@ class _MainPageState extends State<MainPage> {
                 textColor: AppColors.white,
               ),
               GButton(
-                icon: Icons.person_outline,
+                icon: Icons.notifications_active_outlined,
                 iconColor: AppColors.primaryColor,
-                text: 'Profile',
+                text: 'Updates',
                 iconActiveColor: AppColors.white,
                 textColor: AppColors.white,
               ),
@@ -89,6 +88,6 @@ class _MainPageState extends State<MainPage> {
 final pages = const [
   HomePage(),
   LiveMapPage(),
-  SelectUniversity(),
+  Center(child: Text('Saved Page')),
   Center(child: Text('Last Page')),
 ];

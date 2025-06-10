@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:how_far_uni/presentation/components/home_location_details.dart';
 import 'package:how_far_uni/presentation/components/search_bottom_modal_sheet.dart';
 import 'package:how_far_uni/presentation/components/street_view_scroll.dart';
@@ -31,7 +30,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Hi, \nDartMaskedGuy!',
-                          style: GoogleFonts.poppins(
+                          style: TextStyle(
                             color: Colors.white,
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -96,14 +95,14 @@ class HomePage extends StatelessWidget {
                             ),
                             Text(
                               '68 km',
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: 45,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               '1 hr 20 min',
-                              style: GoogleFonts.poppins(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black54,

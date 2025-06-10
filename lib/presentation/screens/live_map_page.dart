@@ -13,24 +13,12 @@ class LiveMapPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: const CustomSearchBar(),
         actions: [
-          Container(
-            padding: const EdgeInsets.all(3),
-            margin: const EdgeInsets.only(right: 10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 3,
-                  spreadRadius: 3,
-                ),
-              ],
-            ),
-            child: CircleAvatar(
-              backgroundColor: AppColors.secondaryColor,
-              foregroundColor: Colors.white,
-              child: Icon(Icons.person),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.account_circle,
+              size: 40,
+              color: AppColors.primaryColor,
             ),
           ),
         ],

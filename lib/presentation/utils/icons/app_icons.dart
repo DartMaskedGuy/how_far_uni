@@ -2,6 +2,8 @@ class AppIcons {
   // PNG and SVG Paths
   static const _png = 'assets/images/';
 
+  // static const logo = '{$_png}logo.png';
+
   // Images
   static const map = '{$_png}map.jpeg';
   static const streetview = '{$_png}street_view.avif';
